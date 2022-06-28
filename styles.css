@@ -1,0 +1,329 @@
+/* ----------------- */
+/* Custom properties */
+/* ----------------- */
+
+:root {
+
+  /*color*/
+  --clr-main-400: hsl(219, 84%, 67%, 1);
+  --clr-accent-200: hsl(286, 84%, 80%, 1);
+  --clr-accent-300: hsl(174, 78%, 76%, 1);
+  --clr-base-999: hsl(0, 0%, 94%, 1);
+  --clr-base-000: hsl(0, 0%, 5%, 1);
+  --clr-base-800: hsl(0, 0%, 50%, .3);
+
+
+  /*font-sizes*/
+
+  --ft-9: 9.375rem;
+  --ft-6: 6.25rem;
+  --ft-3: 3.5rem;
+  --ft-2: 2rem;
+  --ft-1-7: 1.75rem;
+  --ft-1-1: 1.125rem;
+  --ft-1: 1rem;
+  --ft-0-8: 0.875rem;
+  /*font-fams*/
+
+  --ff-head: "Bodoni Moda", serif;
+  --ff-main: "Bodoni Moda", serif;
+  --ff-sub: "Bodoni Moda", serif;
+
+  /* other root sizes */
+  --mobile-nav-size: 2rem;
+}
+
+/* ----------------- */
+/* Reset */
+/* ----------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+w *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+header,
+ul,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/*change default link on click text color*/
+a:active {
+  color: var(--clr-base-000);
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Resets button decorations*/
+button{
+  padding: 0;
+  outline: none;
+  border-style: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----------------- */
+/*utility classes*/
+/* ----------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2rem;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+.tx-clean {
+  text-decoration: none;
+}
+.max-width {
+  width: 100vw;
+}
+.zero-nine-grad {
+  background-image: linear-gradient(hsl(0, 0%, 5%, 1)75%, hsl(0, 0%, 94%, 1));
+}
+.center {
+  margin-inline: auto;
+}
+.sticky {
+  position: sticky;
+}
+@media (max-width: 1000px) {
+  .mobile-none {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .mobile-on {
+    display: none;
+  }
+}
+/* ----------------------- */
+/*animation utility classes*/
+/* ----------------------- */
+
+.fade-in {
+  animation: fadeIn;
+  animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.move-up {
+  animation: moveUp;
+  animation-duration: 2s;
+}
+
+/* color */
+.bg-dark {
+  background-color: var(--clr-base-000);
+}
+
+.bg-light {
+  background-color: var(--clr-base-999);
+}
+
+.bg-accent {
+  background-color: var(--clr-accent-200);
+}
+
+.bg-main {
+  background-color: var(--clr-main-400);
+}
+
+.bg-menu {
+  background-color: var(--clr-base-999);
+}
+
+.text-dark {
+  color: var(--clr-base-000);
+}
+
+.text-light {
+  color: var(--clr-base-999);
+}
+
+/* fonts */
+.ft-head {
+  font-family: var(--ff-head);
+}
+
+.ft-sub {
+  font-family: var(--ff-sub);
+}
+
+.ft-main {
+  font-family: var(--ff-main);
+}
+
+
+/*assets*/
+/* 
+ * {
+  box-sizing: border-box;
+  outline: 1px solid green !important;
+}  */
+
+/*header*/
+
+
+.logo img {
+  margin-inline: auto;
+}
+
+/*header/navbar for desktop*/
+nav {
+  justify-content: space-evenly;
+  position: sticky;
+  top: 1rem;
+}
+
+.nav-button {
+  background-color: var(--clr-base-999);
+  font-size: var(--ft-1-1);
+  text-align: center;
+  border-radius: 1rem;
+  width: 10rem;
+}
+.nav-button:hover {
+  background-color: var(--clr-accent-200);
+  transition-duration: .8s;
+  border-radius: 1rem;
+  text-align: center;
+  width: 10rem;
+}
+.test{
+  height: 200vh;
+}
+/*navbar for mobile*/
+
+.mobile-nav {
+background-color: hsl(0, 10%, 70%, .33);
+justify-content: space-around;
+flex-direction: column;
+position: fixed;
+z-index: 9999;
+bottom: 0;
+
+transform: translateY(calc(100% - var(--mobile-nav-size)));
+transition: transform 500ms;
+}
+
+.mobile-nav[data-visible="true"] {
+  transform: translateY(0%);
+}
+
+.mobile-nav-menu-toggle {
+  position: relative;
+  height: var(--mobile-nav-size);
+}
+.mobile-nav-list {
+z-index: 1000;
+font-size: var(--ft-1);
+text-align: center;
+}
+.mobile-nav-items {
+  list-style-type: none;
+  margin-block: var(--gap, 1rem);
+}
+@supports (backdrop-filter: blur(1rem)) {
+  .mobile-nav {background: hsl(0, 0%, 70%, .33);
+  backdrop-filter: blur(1rem);
+  }
+}
+
+/*script-assets*/
