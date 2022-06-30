@@ -11,6 +11,9 @@
 
 const mobileNav = document.querySelector(".mobile-nav");
 const navToggle = document.querySelector(".mobile-nav-menu-toggle");
+const scrollNext = document.querySelector(".scroll-to-next");
+const scrollPrev = document.querySelector(".scroll-to-previous")
+let vh = window.innerWidth;
 
 navToggle.addEventListener("click", () => {
     const visibility = mobileNav.getAttribute("data-visible");
@@ -23,4 +26,18 @@ navToggle.addEventListener("click", () => {
         navToggle.setAttribute("aria-expanded", false);
 
     }
+});
+
+scrollNext.addEventListener("click", () => {
+    document.getElementById('scroll').scrollBy({
+        left: vh,
+        behavior: "smooth",
+    });
+});
+
+scrollPrev.addEventListener("click", () => {
+    document.getElementById('scroll').scrollBy({
+        left: -vh,
+        behavior: "smooth",
+    });
 });
