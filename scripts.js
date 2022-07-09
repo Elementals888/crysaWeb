@@ -1,20 +1,15 @@
-// window.onscroll = function() {navChange()};
-
-// function navChange() {
-//   if (document.documentElement.scrollTop > 100) {
-//     document.getElementById("").className = "";
-//   } else {
-//     document.getElementById("").className = "";
-//   }
-// }
-
-
 const mobileNav = document.querySelector(".mobile-nav");
 const navToggle = document.querySelector(".mobile-nav-menu-toggle");
 const scrollNext = document.querySelector(".scroll-to-next");
-const scrollPrev = document.querySelector(".scroll-to-previous")
+const scrollPrev = document.querySelector(".scroll-to-previous");
+const scroller = document.getElementById('side-scroller');
+const scrolls = document.querySelectorAll('scroll-children');
+
+
 let vh = window.innerWidth;
 
+
+// menu toggle function
 navToggle.addEventListener("click", () => {
     const visibility = mobileNav.getAttribute("data-visible");
 
@@ -27,16 +22,18 @@ navToggle.addEventListener("click", () => {
 
     }
 });
+0
 
+// scroll buttons
 scrollNext.addEventListener("click", () => {
-    document.getElementById('scroll').scrollBy({
+    scroller.scrollBy({
         left: vh,
         behavior: "smooth",
     });
 });
 
 scrollPrev.addEventListener("click", () => {
-    document.getElementById('scroll').scrollBy({
+    scroller.scrollBy({
         left: -vh,
         behavior: "smooth",
     });

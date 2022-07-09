@@ -339,8 +339,8 @@ text-align: center;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
 }
 .side-scroller::-webkit-scrollbar {
   display: none;
@@ -395,6 +395,35 @@ text-align: center;
   background-color: bisque;
 }
 
+@media (max-width: 1000px) {
+  .scroll-to-next,
+  .scroll-to-previous {
+    display: none;
+  }
+}
+
+.scroll-nav {
+  height: fit-content;
+  color: red;
+  position: relative;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+.scroll-page-indicator {
+  background-color: var(--clr-base-800);
+  border-radius: 50%;
+  height: 1rem;
+  aspect-ratio: 1;
+}
+
+.scroll-page-indicator:hover {
+  background-color: var(--clr-accent-200);
+}
+
+.scroll-page-indicator.current-page {
+  background-color: var(--clr-accent-200);
+}
 
 .color1 {
   background-color: red;
