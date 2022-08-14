@@ -47,18 +47,7 @@ w *::after {
 }
 
 /* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-header,
-ul,
-dd {
+* {
   margin: 0;
   padding: 0;
 }
@@ -277,7 +266,7 @@ nav {
   background-color: var(--clr-base-999);
   font-size: var(--ft-1-1);
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 1rem;  
   width: 10rem;
 }
 .nav-button:hover {
@@ -339,8 +328,9 @@ text-align: center;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 
-  /* -ms-overflow-style: none;
-  scrollbar-width: none; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
 }
 .side-scroller::-webkit-scrollbar {
   display: none;

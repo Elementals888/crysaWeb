@@ -1,9 +1,6 @@
 const mobileNav = document.querySelector(".mobile-nav");
 const navToggle = document.querySelector(".mobile-nav-menu-toggle");
-const scrollNext = document.querySelector(".scroll-to-next");
-const scrollPrev = document.querySelector(".scroll-to-previous");
-const scroller = document.getElementById('side-scroller');
-const scrolls = document.querySelectorAll('scroll-children');
+
 
 
 let vh = window.innerWidth;
@@ -22,19 +19,42 @@ navToggle.addEventListener("click", () => {
 
     }
 });
-0
 
-// scroll buttons
-scrollNext.addEventListener("click", () => {
+// carousel 
+
+const btnNext = document.querySelector(".scroll-to-next");
+const btnPrev = document.querySelector(".scroll-to-previous");
+const scrolls = document.querySelectorAll("scroll-children");
+const scroller = document.getElementById("side-scroller");
+
+const track = document.querySelector(".side-scroller");
+const slides = Array.from(track.children);
+const navDots = document.querySelector(".scroll-nav");
+const dots = Array.from(navDots.children);
+
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+
+
+
+// carousel__scroll-buttons
+
+//carousel__scroll-button--right
+btnNext.addEventListener("click", () => {
     scroller.scrollBy({
         left: vh,
         behavior: "smooth",
     });
 });
 
-scrollPrev.addEventListener("click", () => {
+
+
+//carousel__scroll-button--left
+btnPrev.addEventListener("click", () => {
     scroller.scrollBy({
         left: -vh,
         behavior: "smooth",
     });
 });
+
+
